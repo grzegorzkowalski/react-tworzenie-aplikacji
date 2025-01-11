@@ -1,6 +1,6 @@
 import {FC, JSX} from 'react';
 
-const Search : FC = () : JSX.Element => {
+const Search: FC = () : JSX.Element => {
     return (
         <div>
             <input type="text" placeholder="wpisz czego szukasz"/>
