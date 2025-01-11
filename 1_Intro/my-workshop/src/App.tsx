@@ -3,6 +3,7 @@ import {JSX} from "react";
 
 function App() {
 
+
     // const birthDay : number | null = parseInt(prompt("Podaj swój rok urodzenia?") ?? "");
 
     // const numA : number = +(prompt('Podaj pierwszą liczbę (A):') || '0');
@@ -32,10 +33,35 @@ function App() {
     //         return;
     // }
 
+    // Zadanie 1 JSX Atrybuty
     const styles = {height: 100, width: 100};
     const redDiv: JSX.Element = <div style={{...styles, backgroundColor: 'red'}} />
     const greenDiv: JSX.Element = <div style={{...styles, backgroundColor: 'green'}} />
     const bluedDiv: JSX.Element = <div style={{...styles, backgroundColor: 'blue'}} />
+
+    // Zadanie 2 JSX Atrybuty
+    type BorderColor = 'red' | 'green' | 'blue';
+
+    const userInput: string | null = prompt('Podaj kolor ramki (red, green, blue)?');
+    const borderColor: BorderColor | null = userInput?.toLowerCase() as BorderColor | null;
+
+    const allowedColors: BorderColor[] = ['red', 'green', 'blue'];
+
+    let element: JSX.Element;
+
+    if (allowedColors.includes(borderColor as BorderColor)) {
+        element = (
+            <div
+                style={{
+                    width: '100px',
+                    height: '100px',
+                    border: `5px solid ${borderColor}`,
+                }}
+            />
+        );
+    } else {
+        element = <div>Nieprawidłowy kolor</div>;
+    }
 
     return (
       <>
@@ -44,6 +70,7 @@ function App() {
           {redDiv}
           {greenDiv}
           {bluedDiv}
+          {element}
       </>
   )
 }
