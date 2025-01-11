@@ -1,6 +1,8 @@
 import './App.css'
 import {JSX} from "react";
 import Search from "./components/Search";
+import LikeBox from "./components/LikeBox.tsx";
+import Menu from "./components/Menu.tsx";
 
 function App() {
 
@@ -64,6 +66,25 @@ function App() {
         element = <div>Nieprawidłowy kolor</div>;
     }
 
+    const menu = [
+        {
+            url: "/",
+            text: "Strona główna"
+        },
+        {
+            url: "/blog",
+            text: "Blog"
+        },
+        {
+            url: "/cennik",
+            text: "Cennik"
+        },
+        {
+            url: "/kontakt",
+            text: "Kontakt"
+        }
+    ];
+
     return (
       <>
           {/*<p>Twój wiek to {new Date().getFullYear() - birthDay}.</p>*/}
@@ -73,6 +94,8 @@ function App() {
           {bluedDiv}
           {element}
           <Search />
+          <LikeBox likes={500} />
+          <Menu menu={menu} />
       </>
   )
 }

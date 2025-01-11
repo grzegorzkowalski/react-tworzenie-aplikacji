@@ -1,10 +1,13 @@
 import React, {JSX} from 'react';
 
-// Komponent LikeBox
-const LikeBox: React.FC = () : JSX.Element => {
+interface LikeBoxProps {
+    likes: number;
+}
+
+const LikeBox: React.FC<LikeBoxProps> = ({ likes }) : JSX.Element => {
     return (
         <div>
-            <p>Liczba polubień: 0</p>
+            <p>Liczba polubień: {likes}</p>
             <button>Polub</button>
         </div>
     );

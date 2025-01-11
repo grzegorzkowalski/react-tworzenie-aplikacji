@@ -1,22 +1,23 @@
 import React, {JSX} from 'react';
 
-// Komponent Menu
-const Menu: React.FC = () : JSX.Element => {
+interface MenuItem {
+    url: string;
+    text: string;
+}
+
+interface MenuProps {
+    menu: MenuItem[];
+}
+
+const Menu: React.FC<MenuProps> = ({ menu }) : JSX.Element => {
     return (
         <nav>
             <ul>
-                <li>
-                    <a href="/">Strona główna</a>
-                </li>
-                <li>
-                    <a href="/blog">Blog</a>
-                </li>
-                <li>
-                    <a href="/cennik">Cennik</a>
-                </li>
-                <li>
-                    <a href="/kontakt">Kontakt</a>
-                </li>
+                {menu.map((item, index) => (
+                    <li key={index}>
+                        <a href={item.url}>{item.text}</a>
+                    </li>
+                ))}
             </ul>
         </nav>
     );
