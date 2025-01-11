@@ -1,15 +1,14 @@
 ### Używamy tylko komponentów funkcyjnych.
 ## Zadanie 1
 
-1. Stwórz nową aplikację.
+1. Stwórz nową aplikację `pogodynka`.
 2. Stwórz nawigację z 3 podstronami `Home, CityWeather, FindWeather`.
 3. Przygotuj nawigację, która pozwoli poruszać się po stronie.
 4. W komponencie Home stwórz tablicę z listą wybranych miast.
 5. Przygotuj komponent w celu wyrenderowania listy miast z przyciskiem przekierowującym na podstronę `CityWeather`.
 6. W przekierowaniu powinieneś przekazać nazwę miasta.
 7. Utwórz konto na portalu `https://openweathermap.org/api `.
-8. W komponencie `CityWeather` na podstawie przekazywanej nazwy miasta utwórz zapytanie do powyższego api, które zwróci prognozę pogody.
-   Żeby odczytać parametr miasta skorzystaj z hooka useParams.
+8. W komponencie `CityWeather` na podstawie przekazywanej nazwy miasta utwórz zapytanie do powyższego api, które zwróci prognozę pogody. Żeby odczytać parametr miasta skorzystaj z hooka useParams.
 9. Wyświetl w komponencie nazwę miasta, aktualną temperaturę i ogólny opis pogody.
 10. Utwórz konto w portalu `https://pixabay.com/api/docs/ `.
 11. Na podstawie opisu pogody z API pogodowego wyślij zapytanie do portalu pixabay i znajdź obrazek ilustrujący opisaną pogodę.
@@ -28,6 +27,7 @@
 3. Wykonaj wszystkie wymagane kroki, żeby móc korzystać z API dla obu rozwiązań.
 4. Przygotuj formularz, który umożliwi wpisanie wybranej kategorii i wybór bazy, z której chcemy skorzystać i wyszukać listę zdjęć.
 5. Wyświetl listę zdjęć dla wybranej kategorii.
+6. Spróbuj zaimplementować wzorzec projektowy `strategia`.
 
 ## Zadanie 3
 
