@@ -1,5 +1,6 @@
 import './App.css'
 import {JSX} from "react";
+import Search from "./components/Search";
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
           {greenDiv}
           {bluedDiv}
           {element}
+          <Search />
       </>
   )
 }
