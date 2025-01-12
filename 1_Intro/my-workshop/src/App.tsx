@@ -1,8 +1,8 @@
 import './App.css'
-import {JSX} from "react";
 import Search from "./components/Search";
 import LikeBox from "./components/LikeBox.tsx";
 import Menu from "./components/Menu.tsx";
+import StrobeLight from "./components/06_Chapter/StrobeLight.tsx";
 
 function App() {
 
@@ -36,35 +36,35 @@ function App() {
     //         return;
     // }
 
-    // Zadanie 1 JSX Atrybuty
-    const styles = {height: 100, width: 100};
-    const redDiv: JSX.Element = <div style={{...styles, backgroundColor: 'red'}} />
-    const greenDiv: JSX.Element = <div style={{...styles, backgroundColor: 'green'}} />
-    const bluedDiv: JSX.Element = <div style={{...styles, backgroundColor: 'blue'}} />
-
-    // Zadanie 2 JSX Atrybuty
-    type BorderColor = 'red' | 'green' | 'blue';
-
-    const userInput: string | null = prompt('Podaj kolor ramki (red, green, blue)?');
-    const borderColor: BorderColor | null = userInput?.toLowerCase() as BorderColor | null;
-
-    const allowedColors: BorderColor[] = ['red', 'green', 'blue'];
-
-    let element: JSX.Element;
-
-    if (allowedColors.includes(borderColor as BorderColor)) {
-        element = (
-            <div
-                style={{
-                    width: '100px',
-                    height: '100px',
-                    border: `5px solid ${borderColor}`,
-                }}
-            />
-        );
-    } else {
-        element = <div>Nieprawidłowy kolor</div>;
-    }
+    // // Zadanie 1 JSX Atrybuty
+    // const styles = {height: 100, width: 100};
+    // const redDiv: JSX.Element = <div style={{...styles, backgroundColor: 'red'}} />
+    // const greenDiv: JSX.Element = <div style={{...styles, backgroundColor: 'green'}} />
+    // const bluedDiv: JSX.Element = <div style={{...styles, backgroundColor: 'blue'}} />
+    //
+    // // Zadanie 2 JSX Atrybuty
+    // type BorderColor = 'red' | 'green' | 'blue';
+    //
+    // const userInput: string | null = prompt('Podaj kolor ramki (red, green, blue)?');
+    // const borderColor: BorderColor | null = userInput?.toLowerCase() as BorderColor | null;
+    //
+    // const allowedColors: BorderColor[] = ['red', 'green', 'blue'];
+    //
+    // let element: JSX.Element;
+    //
+    // if (allowedColors.includes(borderColor as BorderColor)) {
+    //     element = (
+    //         <div
+    //             style={{
+    //                 width: '100px',
+    //                 height: '100px',
+    //                 border: `5px solid ${borderColor}`,
+    //             }}
+    //         />
+    //     );
+    // } else {
+    //     element = <div>Nieprawidłowy kolor</div>;
+    // }
 
     const menu = [
         {
@@ -89,13 +89,16 @@ function App() {
       <>
           {/*<p>Twój wiek to {new Date().getFullYear() - birthDay}.</p>*/}
           {/*{result}*/}
-          {redDiv}
-          {greenDiv}
-          {bluedDiv}
-          {element}
+          {/*{redDiv}*/}
+          {/*{greenDiv}*/}
+          {/*{bluedDiv}*/}
+          {/*{element}*/}
           <Search />
           <LikeBox likes={500} />
           <Menu menu={menu} />
+          <StrobeLight color="pink" frequency={500} />
+          <StrobeLight color="magenta" frequency={200} />
+          <StrobeLight color="yellow" frequency={100} />
       </>
   )
 }
