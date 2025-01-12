@@ -5,12 +5,17 @@ interface CrazyDivProps {
     max: number;
 }
 
-const CrazyDiv: React.FC<CrazyDivProps> = ({ min, max }) => {
-    const [position, setPosition] = useState({ top: 0, left: 0 });
+interface PositionProps {
+    top: number;
+    left: number;
+}
 
-    const handleHover = () => {
-        const randomTop = Math.random() * (max - min) + min;
-        const randomLeft = Math.random() * (max - min) + min;
+const CrazyDiv: React.FC<CrazyDivProps> = ({ min, max }) => {
+    const [position, setPosition] = useState<PositionProps>({ top: 0, left: 0 });
+
+    const handleHover: React.MouseEventHandler<HTMLDivElement> | undefined = () : void => {
+        const randomTop: number = Math.random() * (max - min) + min;
+        const randomLeft: number = Math.random() * (max - min) + min;
         setPosition({ top: randomTop, left: randomLeft });
     };
 
@@ -25,7 +30,7 @@ const CrazyDiv: React.FC<CrazyDivProps> = ({ min, max }) => {
                 top: position.top,
                 left: position.left,
             }}
-        ></div>
+        />
     );
 };
 
