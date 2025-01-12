@@ -1,8 +1,15 @@
-import './App.css'
 import Search from "./components/Search";
-import LikeBox from "./components/LikeBox.tsx";
-import Menu from "./components/Menu.tsx";
-import StrobeLight from "./components/06_Chapter/StrobeLight.tsx";
+import LikeBox from "./components/LikeBox";
+import Menu from "./components/Menu";
+import StrobeLight from "./components/06_Chapter/StrobeLight";
+import './App.css'
+import Clock from "./components/Clock";
+import Numbers from "./components/07_Chapter/Numbers";
+import CrazyDiv from "./components/07_Chapter/CrazyDiv";
+import Shop from "./components/08_Chapter/Shop.tsx";
+import TodoApp from "./components/08_Chapter/TodoApp.tsx";
+import NumberRandomInfo from "./components/09_Chapter/NumberRandomInfo.tsx";
+import NumberInfo from "./components/09_Chapter/NumberInfo.tsx";
 
 function App() {
 
@@ -86,21 +93,44 @@ function App() {
     ];
 
     return (
-      <>
-          {/*<p>Twój wiek to {new Date().getFullYear() - birthDay}.</p>*/}
-          {/*{result}*/}
-          {/*{redDiv}*/}
-          {/*{greenDiv}*/}
-          {/*{bluedDiv}*/}
-          {/*{element}*/}
-          <Search />
-          <LikeBox likes={500} />
-          <Menu menu={menu} />
-          <StrobeLight color="pink" frequency={500} />
-          <StrobeLight color="magenta" frequency={200} />
-          <StrobeLight color="yellow" frequency={100} />
-      </>
-  )
+        <>
+            {/*<p>Twój wiek to {new Date().getFullYear() - birthDay}.</p>*/}
+            {/*{result}*/}
+            {/*{redDiv}*/}
+            {/*{greenDiv}*/}
+            {/*{bluedDiv}*/}
+            {/*{element}*/}
+            <Search/>
+            <LikeBox likes={500}/>
+            <Menu menu={menu}/>
+            <StrobeLight color="pink" frequency={500}/>
+            <StrobeLight color="magenta" frequency={200}/>
+            <StrobeLight color="yellow" frequency={100}/>
+            <Clock/>
+            <div>
+                <h1>Chapter 07 Zadanie 4</h1>
+                <Numbers/>
+                <CrazyDiv min={0} max={800}/>
+            </div>
+            <div>
+                <h1>Chapter 08 Zadanie 1</h1>
+                <Shop/>
+                <TodoApp/>
+            </div>
+            <div>
+                <h1>Zadanie 1: NumberRandomInfo</h1>
+                <NumberRandomInfo/>
+
+                <h1>Zadanie 2: NumberInfo</h1>
+                <NumberInfo number={1}/>
+                <NumberInfo number={2}/>
+                <NumberInfo number={5}/>
+                <NumberInfo number={7}/>
+                <NumberInfo number={10}/>
+                <NumberInfo number={16}/>
+            </div>
+        </>
+    )
 }
 
 export default App
