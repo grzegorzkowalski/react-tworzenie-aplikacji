@@ -51,13 +51,14 @@
 
 1. Otwórz plik `tailwind.config.js` i skonfiguruj ścieżki:
    ```javascript
-   module.exports = {
-     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-     theme: {
-       extend: {},
-     },
-     plugins: [],
-   };
+/** @type {import('tailwindcss').Config} */
+export default {
+content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+theme: {
+extend: {},
+},
+plugins: [],
+}
    ```
 2. W pliku `src/index.css` dodaj:
    ```css
@@ -65,6 +66,28 @@
    @tailwind components;
    @tailwind utilities;
    ```
+
+3. Zainstaluj WindiCSS
+```bash
+npm install vite-plugin-windicss -D
+```
+4. Zaktualizuj vite.config.ts
+```ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import WindiCSS from 'vite-plugin-windicss';
+
+export default defineConfig({
+  plugins: [react(), WindiCSS()],
+});
+```
+
+5. Import virtual:windi.css
+   W pliku wejściowym aplikacji `App.tsx`, zaimportuj `virtual:windi.css`.
+
+```ts
+import App from './App';
+```
 
 #### Sprawdzenie konfiguracji
 
@@ -87,7 +110,8 @@
 #### Instrukcja
 
 1. Warsztat zaczniemy budować od podstrony `Collection`.
-2. W pliku `src/components/Header.tsx` utwórz komponent `Header.tsx`. Treści i style kopiuj z tego adresu `https://mrud3r.github.io/e-commerce`. Pomiń na razie funkcjonalność koszyka.
+2. Dodaj folder `pages` w `src` i stwóz stronę `Collection.tsx`.
+3. W pliku `src/components/Header.tsx` utwórz komponent `Header.tsx`. Treści i style kopiuj z tego adresu `https://mrud3r.github.io/e-commerce`. Pomiń na razie funkcjonalność koszyka.
 3W pliku `App.tsx` zaimportuj i użyj komponentu `Header`.
 
 ### Lista Produktów
